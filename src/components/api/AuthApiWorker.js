@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "@types/react";
-import { Button, Checkbox, Form, Input } from 'antd';
+//import React, {useEffect, useState} from "@types/react";
 import axios from "axios";
 
 class AuthApiWorker {
