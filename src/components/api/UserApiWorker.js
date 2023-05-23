@@ -32,6 +32,10 @@ class UserApiWorker {
             }
         });
     }
+
+    // async deleteFilm(id) {
+    //     return await this.#axios.delete("/deleteById",id);
+    // }
 }
 
 export default UserApiWorker;

@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
-import {Col, Modal, Row, Table} from "antd";
+import {Button, Col, Modal, Row, Table} from "antd";
 import UserApiWorker from "../api/UserApiWorker";
 
 
@@ -29,8 +29,9 @@ const UserPage = () => {
     }
 
     const deleteFilms = (id) => {
-        axios.delete(`http://localhost:8080/films/deleteById/${id}`)
-            .then(response =>{
+         axios.delete(`http://localhost:8080/api/v1/secure/deleteById/${id}`)
+            //userApiWorker.deleteFilm(id)
+            .then(response => {
                 loadFilms();
             })
     }
@@ -75,6 +76,7 @@ const UserPage = () => {
                         <addOutlined>
 
                         </addOutlined>
+
                     </div>
                 );
             },
@@ -93,7 +95,13 @@ const UserPage = () => {
         });
     };
     return (
+        <div>
         <Table columns={columns} dataSource={data} />
+            <Button type="primary" htmlType="logout" onClick={logout}>
+                Выход
+            </Button>
+        </div>
+
     );
 };
 
