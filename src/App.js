@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Modal, Table} from "antd";
-import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
+//import {Button, Modal, Table} from "antd";
+//import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
 import {Route, Routes} from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 import MainPage from "./components/main_page/MainPage";
 import NotFoundPage from "./components/not_found_page/NotFoundPage";
 import SecureLayout from "./components/secure/SecureLayout";
@@ -11,7 +11,7 @@ import AuthPage from "./components/auth_page/AuthPage";
 import RegisterPage from "./components/register_page/RegisterPage";
 
 const App = () => {
-    let [dataSource, setDataSource] = useState([]);
+    /*let [dataSource, setDataSource] = useState([]);
 
    const loadFilms = () => {
        axios.get("http://localhost:8080/films/getAll")
@@ -84,7 +84,7 @@ const App = () => {
             },
         });
     };
-
+*/
     return (
         <Routes>
             <Route path="/" element={<MainPage/>}/>

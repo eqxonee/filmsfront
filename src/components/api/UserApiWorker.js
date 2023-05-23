@@ -24,6 +24,14 @@ class UserApiWorker {
             }
         });
     }
+
+    async getFilm(token) {
+        return await this.#axios.get("/getAll", {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
+    }
 }
 
 export default UserApiWorker;
