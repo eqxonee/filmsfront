@@ -19,7 +19,8 @@ const UserPage = () => {
       navigate("/");
     }
 
-    let setDataSource = useState([]);
+    //let setDataSource = useState([]);
+    let token = localStorageWorker.getToken();
 
     const loadFilms = () => {
         userApiWorker.getFilm(localStorageWorker.getToken())
@@ -28,10 +29,13 @@ const UserPage = () => {
             })
     }
 
-    const deleteFilms = (id) => {
-         axios.delete(`http://localhost:8080/api/v1/secure/deleteById/${id}`)
+    const deleteFilms = (id,token) => {
+         axios.delete(`http://localhost:8080/films/deleteById/${id}`,{headers: {
+                 "Authorization": "Bearer " + token
+             }})
             //userApiWorker.deleteFilm(id)
             .then(response => {
+                setData(response.data)
                 loadFilms();
             })
     }
@@ -89,11 +93,12 @@ const UserPage = () => {
             okText: "Да",
             okType: "danger",
             onOk: () => {
-                deleteFilms(record.id);
+                deleteFilms(record.id,token);
                 //setDataSource(dataSource.filter(student => student.id !== record.id));
             },
         });
     };
+
     return (
         <div>
         <Table columns={columns} dataSource={data} />

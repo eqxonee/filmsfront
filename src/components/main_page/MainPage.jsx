@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const MainPage = () => {
+
+
     return (
         <div>
             <h1>Это главная страница сайта</h1>

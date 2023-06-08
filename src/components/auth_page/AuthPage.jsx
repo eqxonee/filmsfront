@@ -4,6 +4,7 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import AuthApiWorker from "../api/AuthApiWorker";
 import {useNavigate} from "react-router-dom";
 
+
 const AuthPage = () => {
 
     let localStorageWorker = new LocalStorageWorker();
